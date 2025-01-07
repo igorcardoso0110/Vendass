@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Simples</title>
+    <!-- Link para o Font Awesome (para ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset e Estilos Globais */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; color: #333; line-height: 1.6; }
+
+        /* Cabeçalho */
+        .header {
+            background: linear-gradient(90deg, #0056b3, #0077e6);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            position: relative;
+        }
+        .header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Efeito de animação de brilho no cabeçalho */
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: skewX(-45deg);
+            animation: shine 4s infinite;
+            z-index: 1;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Conteúdo Principal (Produtos) */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Efeito de "zoom" nos produtos ao passar o mouse */
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background-color: #f4f4f4;
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-details {
+            padding: 15px;
+            text-align: center;
+        }
+        .product h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .product-price {
+            font-size: 1.3rem;
+            color: #0056b3;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .btn-buy {
+            background: linear-gradient(90deg, #ff7b00, #ffbb33);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(255, 123, 0, 0.5);
+        }
+
+        /* Efeito de hover no botão */
+        .btn-buy:hover {
+            background: linear-gradient(90deg, #ffbb33, #ff7b00);
+            box-shadow: 0 6px 12px rgba(255, 123, 0, 0.7);
+        }
+
+        /* Sobre a Empresa */
+        .about {
+            background-color: #e6f0ff;
+            padding: 30px 20px;
+            text-align: center;
+            margin: 20px auto;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .about h2 {
+            color: #0056b3;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .footer {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .footer p {
+            margin: 0;
+        }
+
+        /* Estilo para o ícone do WhatsApp */
+        .contact-info {
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .contact-info i {
+            font-size: 2rem;
+            color: #25d366; /* Cor do WhatsApp */
+        }
+
+        /* Estilo para link clicável */
+        .whatsapp-link {
+            color: #25d366;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .whatsapp-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <div class="header">
+        <h1>Loja Simples</h1>
+        <p>Encontre produtos incríveis com os melhores preços!</p>
+    </div>
+
+    <!-- Produtos -->
+    <div class="container">
+        <div class="product">
+            <img src="imagens/fone.jpg" alt="Fone de ouvido">
+            <div class="product-details">
+                <h2>Fone de Ouvido</h2>
+                <p class="product-price">R$ 199,90</p>
+                <button class="btn-buy">Comprar Agora</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="imagens/mochila.jpg" alt="Mochila">
+            <div class="product-details">
+                <h2>Mochila</h2>
+                <p class="product-price">R$ 249,90</p>
+                <button class="btn-buy">Comprar Agora</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="imagens/tenis.jpg" alt="Tênis Esportivo">
+            <div class="product-details">
+                <h2>Tênis Esportivo</h2>
+                <p class="product-price">R$ 299,90</p>
+                <button class="btn-buy">Comprar Agora</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sobre a Empresa -->
+    <div class="about">
+        <h2>Sobre a Empresa</h2>
+        <p>Somos uma loja dedicada a oferecer produtos de alta qualidade com preços acessíveis. Nossa missão é trazer conforto e praticidade aos nossos clientes.</p>
+        <p><strong>Endereço:</strong> Rua das Flores, 123, Centro, São Paulo - SP</p>
+        
+        <!-- Adicionando o ícone do WhatsApp e número clicável -->
+        <div class="contact-info">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/5567992805573" class="whatsapp-link" target="_blank">
+                <p><strong>Contato:</strong> (67) 99280-5573</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <div class="footer">
+        <p>&copy; 2025 Loja Simples. Todos os direitos reservados.</p>
+    </div>
+
+</body>
+</html>
+
